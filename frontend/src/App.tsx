@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import { useProductionZK } from './hooks/useProductionZK';
+import SDKDocs from './components/SDKDocs';
 import './App.css';
 
 // Contract configuration
@@ -137,6 +138,9 @@ function App() {
     totalLiquidity: '0',
     utilizationRate: '0'
   });
+
+  // Navigation state
+  const [activeView, setActiveView] = useState('protocol');
 
   // Initialize AVAX-CPoE SDK
   useEffect(() => {
@@ -467,19 +471,17 @@ function App() {
           marginBottom: '30px',
           boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
         }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center'
+          }}>
             <div>
-              <h1 style={{
-                margin: '0 0 10px 0',
-                fontSize: '2.5rem',
-                background: 'linear-gradient(45deg, #667eea, #764ba2)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}>
-                🌉 CrossLend Protocol
+              <h1 style={{ margin: 0, fontSize: '2.5rem', color: '#333' }}>
+                🚀 CrossLend Protocol
               </h1>
-              <p style={{ margin: 0, color: '#666', fontSize: '1.1rem' }}>
-                Real cross-subnet lending powered by AVAX-CPoE
+              <p style={{ margin: '10px 0 0 0', color: '#666', fontSize: '1.1rem' }}>
+                Privacy-Preserving Cross-Subnet DeFi on Avalanche
               </p>
             </div>
 
@@ -512,7 +514,54 @@ function App() {
           </div>
         </div>
 
-        {isConnected && (
+        {/* Navigation Tabs */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginBottom: '30px',
+          gap: '10px'
+        }}>
+          <button
+            onClick={() => setActiveView('protocol')}
+            style={{
+              padding: '12px 24px',
+              backgroundColor: activeView === 'protocol' ? '#4CAF50' : '#f0f0f0',
+              color: activeView === 'protocol' ? 'white' : '#333',
+              border: 'none',
+              borderRadius: '10px',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              fontWeight: activeView === 'protocol' ? 'bold' : 'normal',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            🏦 Protocol Demo
+          </button>
+          <button
+            onClick={() => setActiveView('sdk')}
+            style={{
+              padding: '12px 24px',
+              backgroundColor: activeView === 'sdk' ? '#4CAF50' : '#f0f0f0',
+              color: activeView === 'sdk' ? 'white' : '#333',
+              border: 'none',
+              borderRadius: '10px',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              fontWeight: activeView === 'sdk' ? 'bold' : 'normal',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            📚 SDK Documentation
+          </button>
+        </div>
+
+        {/* SDK Documentation View */}
+        {activeView === 'sdk' && (
+          <SDKDocs />
+        )}
+
+        {/* Protocol Demo View */}
+        {activeView === 'protocol' && isConnected && (
           <>
             {/* Protocol Stats */}
             <div style={{
@@ -927,6 +976,38 @@ function App() {
               </div>
             </div>
           </>
+        )}
+
+        {/* Connection prompt for protocol view */}
+        {activeView === 'protocol' && !isConnected && (
+          <div style={{
+            textAlign: 'center',
+            padding: '60px 20px',
+            backgroundColor: 'white',
+            borderRadius: '20px',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+          }}>
+            <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🦊</div>
+            <h2 style={{ color: '#333', marginBottom: '15px' }}>Connect Your Wallet</h2>
+            <p style={{ color: '#666', marginBottom: '30px', fontSize: '1.1rem' }}>
+              Connect MetaMask to start using the CrossLend Protocol demo
+            </p>
+            <button
+              onClick={connectWallet}
+              style={{
+                background: 'linear-gradient(45deg, #667eea, #764ba2)',
+                color: 'white',
+                border: 'none',
+                padding: '15px 30px',
+                borderRadius: '10px',
+                fontSize: '1.1rem',
+                cursor: 'pointer',
+                fontWeight: 'bold'
+              }}
+            >
+              🦊 Connect MetaMask
+            </button>
+          </div>
         )}
       </div>
     </div>

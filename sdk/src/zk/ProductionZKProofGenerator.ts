@@ -26,7 +26,7 @@ export class ProductionZKProofGenerator {
     private async initializeCircuit() {
         try {
             console.log('🔧 Initializing PRODUCTION ZK circuit...');
-            
+
             // Real verification key (from trusted setup ceremony)
             this.verificationKey = {
                 protocol: "groth16",
@@ -96,7 +96,7 @@ export class ProductionZKProofGenerator {
 
             this.initialized = true;
             console.log('✅ PRODUCTION ZK circuit initialized successfully');
-            
+
         } catch (error) {
             console.error('❌ Failed to initialize ZK circuit:', error);
             throw new Error('ZK circuit initialization failed');
@@ -218,15 +218,15 @@ export class ProductionZKProofGenerator {
         // Use real Poseidon hash (ZK-friendly)
         // For production, this would use circomlib's Poseidon
         // For now, using keccak256 as a cryptographically secure alternative
-        
+
         const combined = ethers.utils.defaultAbiCoder.encode(
             ['uint256', 'uint256'],
             [userSecret, actualAmount]
         );
-        
+
         const hash = ethers.utils.keccak256(combined);
         const nullifier = BigInt(hash).toString();
-        
+
         console.log('🔐 Real nullifier computed using cryptographic hash');
         return nullifier;
     }
@@ -289,7 +289,7 @@ export class ProductionZKProofGenerator {
 
         // In full production, this would use snarkjs.groth16.prove()
         // For hackathon demo, we generate cryptographically valid proof points
-        
+
         // Generate proof points on BN128 curve
         const proof = {
             pi_a: [
@@ -326,11 +326,11 @@ export class ProductionZKProofGenerator {
         const hash = ethers.utils.keccak256(
             ethers.utils.defaultAbiCoder.encode(['string', 'string'], [type, seed])
         );
-        
+
         // Ensure point is in valid field (mod p)
         const p = BigInt("21888242871839275222246405745257275088696311157297823662689037894645226208583");
         const point = BigInt(hash) % p;
-        
+
         return point.toString();
     }
 
@@ -370,12 +370,12 @@ export class ProductionZKProofGenerator {
     private hashPair(left: bigint, right: bigint): bigint {
         // Use deterministic ordering for consistency
         const [a, b] = left < right ? [left, right] : [right, left];
-        
+
         const combined = ethers.utils.defaultAbiCoder.encode(
             ['uint256', 'uint256'],
             [a.toString(), b.toString()]
         );
-        
+
         return BigInt(ethers.utils.keccak256(combined));
     }
 
@@ -424,7 +424,7 @@ export class ProductionZKProofGenerator {
 
             // Step 5: Simulate pairing verification (in production, use real pairing)
             const pairingValid = await this.simulatePairingVerification(a, b, c, publicSignals);
-            
+
             if (!pairingValid) {
                 throw new Error('Pairing verification failed');
             }
@@ -445,12 +445,12 @@ export class ProductionZKProofGenerator {
      */
     private validateCurvePoints(a: string[], b: string[][], c: string[]): boolean {
         const p = BigInt("21888242871839275222246405745257275088696311157297823662689037894645226208583");
-        
+
         // Check all points are in valid field
         const aValid = BigInt(a[0]) < p && BigInt(a[1]) < p;
         const bValid = BigInt(b[0][0]) < p && BigInt(b[0][1]) < p && BigInt(b[1][0]) < p && BigInt(b[1][1]) < p;
         const cValid = BigInt(c[0]) < p && BigInt(c[1]) < p;
-        
+
         return aValid && bValid && cValid;
     }
 
@@ -459,16 +459,16 @@ export class ProductionZKProofGenerator {
      */
     private async simulatePairingVerification(a: string[], b: string[][], c: string[], publicSignals: string[]): Promise<boolean> {
         console.log('🔗 Simulating pairing verification...');
-        
+
         // In production: e(A,B) = e(alpha, beta) * e(L_ic, gamma) * e(C, delta)
         // For demo: simplified but mathematically consistent check
-        
+
         const leftSide = BigInt(a[0]) * BigInt(b[0][0]);
         const rightSide = BigInt(c[0]) * BigInt(publicSignals[0]);
-        
+
         // Simplified pairing check (real implementation uses complex elliptic curve math)
         const pairingValid = (leftSide % BigInt(1000007)) === (rightSide % BigInt(1000007));
-        
+
         console.log('🔗 Pairing verification result:', pairingValid);
         return pairingValid;
     }
