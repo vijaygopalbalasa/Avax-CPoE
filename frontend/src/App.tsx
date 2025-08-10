@@ -987,26 +987,20 @@ function App() {
             borderRadius: '20px',
             boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
           }}>
-            <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🦊</div>
-            <h2 style={{ color: '#333', marginBottom: '15px' }}>Connect Your Wallet</h2>
-            <p style={{ color: '#666', marginBottom: '30px', fontSize: '1.1rem' }}>
-              Connect MetaMask to start using the CrossLend Protocol demo
+            <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🔗</div>
+            <h2 style={{ color: '#333', marginBottom: '15px' }}>Wallet Connection Required</h2>
+            <p style={{ color: '#666', marginBottom: '20px', fontSize: '1.1rem' }}>
+              Please connect your MetaMask wallet using the button in the header above to start using the CrossLend Protocol demo.
             </p>
-            <button
-              onClick={connectWallet}
-              style={{
-                background: 'linear-gradient(45deg, #667eea, #764ba2)',
-                color: 'white',
-                border: 'none',
-                padding: '15px 30px',
-                borderRadius: '10px',
-                fontSize: '1.1rem',
-                cursor: 'pointer',
-                fontWeight: 'bold'
-              }}
-            >
-              🦊 Connect MetaMask
-            </button>
+            <div style={{
+              backgroundColor: '#e3f2fd',
+              padding: '15px',
+              borderRadius: '10px',
+              border: '1px solid #2196F3',
+              color: '#1976d2'
+            }}>
+              <strong>👆 Look for the "Connect MetaMask" button in the top-right corner</strong>
+            </div>
           </div>
         )}
       </div>
