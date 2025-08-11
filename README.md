@@ -654,4 +654,4 @@ MIT License - Built with ❤️ for the Avalanche ecosystem
 
 **The future of DeFi is private, cross-subnet, and powered by Avalanche. CrossLend Protocol makes that future available today.**
 
-*Ready to experience the world's first privacy-preserving cross-subnet DeFi protocol? Deploy now and join the privacy revolution on Avalanche!* 🚀
+*Ready to experience the world's first privacy-preserving cross-subnet DeFi protocol? Deploy now and join the privacy revolution on Avalanche!* 
