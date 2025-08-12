@@ -508,11 +508,6 @@ await privacyPool.withdraw(amount, proof, recipient);
 - [Governance Applications](./examples/governance/)
 - [Cross-Subnet Demos](./examples/cross-subnet/)
 
-### **Community**
-- [GitHub Issues](https://github.com/vijaygopalbalasa/Avax-CPoE/issues)
-- [Discord Community](https://discord.gg/crosslend)
-- [Developer Forum](https://forum.crosslend.io)
-
 ---
 
 ## 🚀 **Ready to Build?**
