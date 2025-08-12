@@ -539,11 +539,6 @@ console.log('🐛 Bug Report Info:', diagnosticInfo);
 - **Documentation**: Check the complete SDK documentation
 - **Examples**: Browse working code examples
 
-### **Emergency Contacts**
-- **Critical Security Issues**: security@crosslend.io
-- **Technical Support**: support@crosslend.io
-- **Developer Relations**: dev@crosslend.io
-
 ---
 
 **Remember: Most issues are resolved by checking input validation, network connectivity, and ensuring you're using the latest SDK version.** 🔧✨
