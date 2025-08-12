@@ -440,19 +440,11 @@ Our proprietary CPoE technology enables:
 4. Add tests
 5. Submit a pull request
 
-## 📄 License
-
-MIT License - see [LICENSE](./LICENSE) file for details.
-
 ## 🔗 Links
 
 - **Avalanche Network**: https://avax.network
 - **Hardhat**: https://hardhat.org
 - **React**: https://reactjs.org
-
----
-
-**Built with ❤️ for the Avalanche ecosystem**
 
 ## 📈 **Avalanche-Focused Roadmap**
 
