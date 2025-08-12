@@ -38,7 +38,7 @@ async function testContractZKIntegration() {
 
         // Test 1: Generate mock ZK proof for testing
         console.log('\n🔐 Generating mock ZK proof for contract testing...');
-        
+
         const mockProof = {
             pA: [
                 "12345678901234567890123456789012345678901234567890123456789012345678901234567890",
@@ -74,7 +74,7 @@ async function testContractZKIntegration() {
         // Test 2: Check if nullifier is already used
         console.log('\n🔍 Checking nullifier status...');
         const nullifierHash = ethers.utils.keccak256(ethers.utils.defaultAbiCoder.encode(['uint256'], [mockProof.publicInputs[2]]));
-        
+
         try {
             const isUsed = await contract.isNullifierUsed(nullifierHash);
             console.log(`✅ Nullifier status: ${isUsed ? 'USED' : 'AVAILABLE'}`);
@@ -84,7 +84,7 @@ async function testContractZKIntegration() {
 
         // Test 3: Estimate gas for ZK verification
         console.log('\n⛽ Estimating gas for ZK verification...');
-        
+
         try {
             // This would require a wallet with private key for actual transaction
             console.log('📊 Estimated Gas Usage:');
@@ -98,7 +98,7 @@ async function testContractZKIntegration() {
 
         // Test 4: Check contract ZK statistics
         console.log('\n📊 Checking contract ZK statistics...');
-        
+
         try {
             const stats = await contract.getZKStats();
             console.log('✅ ZK Statistics:');
@@ -112,13 +112,13 @@ async function testContractZKIntegration() {
 
         // Test 5: Verify proof structure compatibility
         console.log('\n🔧 Verifying proof structure compatibility...');
-        
+
         // Check if proof points are in valid field
         const BN128_FIELD_SIZE = BigInt("21888242871839275222246405745257275088696311157297823662689037894645226208583");
-        
+
         const pointAValid = BigInt(mockProof.pA[0]) < BN128_FIELD_SIZE && BigInt(mockProof.pA[1]) < BN128_FIELD_SIZE;
         const pointCValid = BigInt(mockProof.pC[0]) < BN128_FIELD_SIZE && BigInt(mockProof.pC[1]) < BN128_FIELD_SIZE;
-        
+
         console.log(`✅ Proof Point A: ${pointAValid ? 'VALID' : 'INVALID'} (within BN128 field)`);
         console.log(`✅ Proof Point C: ${pointCValid ? 'VALID' : 'INVALID'} (within BN128 field)`);
         console.log('✅ Proof Point B: G2 point structure correct');
