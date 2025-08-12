@@ -502,12 +502,6 @@ await privacyPool.withdraw(amount, proof, recipient);
 - [Security Best Practices](./SECURITY_GUIDE.md)
 - [Troubleshooting](./TROUBLESHOOTING.md)
 
-### **Examples**
-- [Private DeFi Examples](./examples/defi/)
-- [Gaming Integration](./examples/gaming/)
-- [Governance Applications](./examples/governance/)
-- [Cross-Subnet Demos](./examples/cross-subnet/)
-
 ---
 
 ## 🚀 **Ready to Build?**
