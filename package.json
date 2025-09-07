@@ -1,14 +1,14 @@
 {
-  "name": "crosslend-protocol",
+  "name": "vault-sdk",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["avalanche", "zk-proofs", "cross-subnet", "infrastructure", "sdk"],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Infrastructure-level Zero-Knowledge Verification SDK for Avalanche Multi-Subnet Architecture",
   "dependencies": {
     "ethers": "^5.8.0"
   }

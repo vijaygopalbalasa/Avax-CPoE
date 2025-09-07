@@ -1,5 +1,5 @@
-# 📖 CrossLend SDK API Reference
-## Complete API Documentation for Privacy-Preserving Development
+# 📖 Vault SDK API Reference
+## Complete API Documentation for Infrastructure-Level ZK Verification
 
 ---
 

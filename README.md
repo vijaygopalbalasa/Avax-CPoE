@@ -1,18 +1,18 @@
-# 🚀 CrossLend Protocol
-## World's First Privacy-Preserving Cross-Subnet DeFi Protocol with Production Zero-Knowledge Proofs
+# 🚀 Vault SDK
+## Infrastructure-Level Zero-Knowledge Verification SDK for Avalanche Multi-Subnet Architecture
 
-**Powered by Real Groth16 zk-SNARKs + Custom AVAX CPoE SDK + Avalanche Multi-Subnet Architecture**
+**Hackathon Submission: Revolutionary ZK-Proof Infrastructure for Cross-Subnet Verification**
 
-CrossLend Protocol is a complete privacy infrastructure for Avalanche, featuring:
+Vault SDK is a comprehensive infrastructure toolkit for the Avalanche ecosystem, featuring:
 - **🔐 Production Zero-Knowledge Cryptography**: Real Groth16 zk-SNARKs with BN128 curves (15ms generation)
-- **🌐 Custom AVAX CPoE SDK**: Cross-subnet proof-of-existence system built from scratch
-- **⚡ Avalanche-Native Integration**: Optimized for Avalanche's consensus and subnet architecture
-- **🛠️ Complete Developer Toolkit**: TypeScript SDK enabling any developer to build privacy-preserving apps
+- **🌐 Cross-Subnet Verification System**: ZK proof verification between Avalanche subnets
+- **⚡ Infrastructure-Level Integration**: Core building blocks for Avalanche ecosystem development
+- **🛠️ Complete Developer SDK**: TypeScript toolkit enabling infrastructure-level privacy solutions
 
-**This is not just a lending protocol - it's the foundation for an entire ecosystem of privacy-preserving applications on Avalanche.**
+**This is infrastructure for the future - enabling secure, private, and verifiable cross-subnet operations on Avalanche.**
 
 ### 🏔️ **Built Native for Avalanche Ecosystem**
-CrossLend Protocol harnesses Avalanche's unique strengths: sub-second finality, $0.01 transaction costs, unlimited subnet scalability, and robust consensus. We're not just deployed on Avalanche - we're **architecturally native to Avalanche**.
+Vault SDK harnesses Avalanche's unique strengths: sub-second finality, $0.01 transaction costs, unlimited subnet scalability, and robust consensus. We're not just deployed on Avalanche - we're **architecturally native to Avalanche**.
 
 ## 🔐 **Production Zero-Knowledge Implementation**
 
@@ -98,11 +98,11 @@ contract RealZKVerifier {
 - **Security Level**: 128-bit security with BN128 curves
 - **Privacy Guarantee**: Mathematical zero-knowledge (not just data hiding)
 
-## 🌐 **Custom AVAX CPoE SDK - Cross-Subnet Proof-of-Existence**
+## 🌐 **Vault SDK - Cross-Subnet Verification Infrastructure**
 
-### **Our Own Innovation: Not Using Traditional ICM**
+### **Revolutionary Cross-Subnet ZK Verification System**
 
-**We built a custom cross-subnet communication system from scratch:**
+**We built a comprehensive infrastructure SDK for cross-subnet ZK proof verification:**
 
 #### **🏗️ AvaxCPoE Architecture (`sdk/src/AvaxCPoE.ts`)**
 ```typescript
@@ -169,18 +169,18 @@ export class AvaxCPoE {
 }
 ```
 
-#### **🔧 Cross-Subnet Communication Features:**
-- **Transaction Proof Generation**: Cryptographic proof of transaction existence
+#### **🔧 Cross-Subnet Infrastructure Features:**
+- **ZK Proof Generation**: Cryptographic proof generation for cross-subnet verification
 - **Merkle Inclusion Proofs**: Mathematical verification of event inclusion in blocks
-- **Cross-Subnet Verification**: Verify proofs across different Avalanche subnets
-- **Privacy Preservation**: Prove transaction occurred without revealing details
-- **Custom Protocol**: Built from scratch, not using traditional ICM
+- **Cross-Subnet Verification**: Verify ZK proofs across different Avalanche subnets
+- **Privacy Infrastructure**: Core building blocks for privacy-preserving applications
+- **SDK Architecture**: Comprehensive toolkit for infrastructure-level development
 
-## 🛠️ **Complete TypeScript SDK Library**
+## 🛠️ **Complete Infrastructure SDK Library**
 
-### **Developer-Friendly Privacy Integration**
+### **Developer-Friendly Infrastructure Integration**
 
-**Our SDK makes privacy accessible to any Avalanche developer:**
+**Vault SDK makes cross-subnet ZK verification accessible to any Avalanche developer:**
 
 #### **📦 SDK Components**
 ```typescript
@@ -190,18 +190,18 @@ export { AvaxCPoE } from './AvaxCPoE';
 export { CryptoUtils } from './utils';
 export * from './types';
 
-// Simple 3-line privacy integration
-import { CrossLendSDK } from 'crosslend-sdk';
-const sdk = new CrossLendSDK('https://api.avax-test.network/ext/bc/C/rpc');
-const proof = await sdk.generatePrivateProof(realAmount, threshold);
+// Simple 3-line infrastructure integration
+import { VaultSDK } from 'vault-sdk';
+const sdk = new VaultSDK('https://api.avax-test.network/ext/bc/C/rpc');
+const proof = await sdk.generateZKProof(privateData, publicThreshold);
 const verified = await contract.verifyProof(proof);
 ```
 
-#### **🎯 SDK Use Cases (All with Real ZK Proofs):**
-1. **Private DeFi Lending**: Prove collateral sufficiency without revealing amounts
-2. **Private Gaming**: Prove achievement levels without revealing exact scores  
-3. **Private Governance**: Prove voting power without revealing stake amounts
-4. **Cross-Subnet Privacy**: Private asset transfers between Avalanche subnets
+#### **🎯 Infrastructure Use Cases (All with Real ZK Proofs):**
+1. **Cross-Subnet Verification**: Verify state transitions between Avalanche subnets
+2. **Privacy Infrastructure**: Core building blocks for privacy-preserving applications
+3. **Secure Multi-Party Computation**: Enable private computations across subnets
+4. **Infrastructure Protocols**: Foundation for next-generation Avalanche applications
 
 #### **📚 Interactive SDK Documentation**
 **Built into our frontend at `/sdk-docs` with:**
@@ -250,11 +250,11 @@ const verified = await contract.verifyProof(proof);
 ## 🚀 **Project Architecture**
 
 ```
-CrossLend-protocol/
+Vault-SDK/
 ├── contracts/          # Avalanche C-Chain Smart Contracts (Solidity)
-├── sdk/                # Cross-Subnet ZK Proof SDK (TypeScript)
-├── frontend/           # React DApp with Avalanche Integration
-├── circuits/           # Circom ZK Circuits for Privacy
+├── sdk/                # Cross-Subnet ZK Verification SDK (TypeScript)
+├── frontend/           # React Interface with Avalanche Integration
+├── circuits/           # Circom ZK Circuits for Verification
 └── docs/              # Comprehensive Documentation
 ```
 
@@ -292,13 +292,13 @@ npx hardhat run scripts/deploy.js --network fuji
 npx hardhat verify --network fuji [CONTRACT_ADDRESS]
 ```
 
-### 2. **Avalanche Cross-Subnet SDK** (`/sdk`)
-**World's first SDK for privacy-preserving cross-subnet operations on Avalanche**
+### 2. **Vault SDK - Cross-Subnet Infrastructure** (`/sdk`)
+**Infrastructure-level SDK for ZK verification across Avalanche subnets**
 
 - **🏔️ Avalanche-Native**: Built specifically for Avalanche's subnet architecture
-- **🌐 Cross-Subnet**: Enables private asset transfers between Avalanche subnets
+- **🌐 Cross-Subnet**: Enables ZK proof verification between Avalanche subnets
 - **⚡ Language**: TypeScript with Avalanche ethers.js integration
-- **🔐 Privacy**: Real Groth16 zk-SNARKs for mathematical privacy guarantees
+- **🔐 Infrastructure**: Real Groth16 zk-SNARKs for mathematical verification guarantees
 
 **Avalanche-Specific Features:**
 - **🏔️ Subnet Communication**: Native cross-subnet message passing
@@ -325,22 +325,22 @@ npm run test
 
 **Usage:**
 ```typescript
-import { AvaxCPoE } from '@crosslend/avax-cpoe-sdk';
+import { AvaxCPoE } from '@vault/sdk';
 
-const cpoe = new AvaxCPoE('https://api.avax-test.network/ext/bc/C/rpc');
+const vault = new AvaxCPoE('https://api.avax-test.network/ext/bc/C/rpc');
 
-// Generate proof for a transaction
-const proof = await cpoe.generateProof('0x1234...txhash');
+// Generate ZK proof for cross-subnet verification
+const proof = await vault.generateProof('0x1234...txhash');
 
-// Verify proof
-const result = await cpoe.verifyProof(proof);
+// Verify proof across subnets
+const result = await vault.verifyProof(proof);
 console.log('Proof valid:', result.isValid);
 ```
 
 ### 3. Frontend (`/frontend`)
 - **Framework**: React 18 with TypeScript
-- **Purpose**: User interface for lending/borrowing
-- **Features**: Web3 integration, proof visualization
+- **Purpose**: Interactive interface for SDK demonstration
+- **Features**: Web3 integration, ZK proof visualization, SDK documentation
 
 **Setup:**
 ```bash
@@ -360,7 +360,7 @@ npm start
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd Crosslend-protocol
+cd Vault-SDK
 
 # Setup contracts
 cd contracts && npm install && cd ..
@@ -386,21 +386,21 @@ cd contracts
 npx hardhat test
 ```
 
-## 🌟 Key Innovations
+## 🌟 Key Infrastructure Innovations
 
-### Cross-Domain Proof-of-Event (CPoE)
-Our proprietary CPoE technology enables:
+### Cross-Subnet Zero-Knowledge Verification
+Our revolutionary infrastructure enables:
 
-1. **Event Verification**: Cryptographically prove that events occurred on-chain
-2. **Cross-Chain Security**: Maintain security across different blockchain networks
-3. **Efficient Proofs**: Minimal data requirements for maximum security
-4. **Validator Consensus**: Leverage Avalanche's validator network for proof authenticity
+1. **ZK Proof Verification**: Cryptographically verify state transitions across subnets
+2. **Cross-Subnet Security**: Maintain security across different Avalanche subnets
+3. **Efficient Infrastructure**: Minimal overhead for maximum performance
+4. **Validator Integration**: Leverage Avalanche's consensus for proof authenticity
 
-### DeFi Integration
-- **Collateral Verification**: Prove asset ownership across chains
-- **Liquidation Events**: Secure cross-chain liquidation triggers
-- **Interest Calculations**: Verifiable interest accrual proofs
-- **Governance**: Cross-chain voting and proposal verification
+### Infrastructure Applications
+- **State Verification**: Prove state transitions across subnets
+- **Privacy Infrastructure**: Core building blocks for privacy-preserving protocols
+- **Cross-Subnet Communication**: Secure message passing between subnets
+- **Protocol Foundation**: Infrastructure for next-generation Avalanche applications
 
 ## 🔒 Security Features
 
@@ -410,12 +410,12 @@ Our proprietary CPoE technology enables:
 - ✅ **Replay Protection**: Timestamp-based proof freshness
 - ✅ **Version Control**: Backward-compatible proof formats
 
-## ✅ **Production Status**
+## ✅ **Hackathon Submission Status**
 
-- ✅ **SDK Core**: Complete with real zero-knowledge proof generation and verification
+- ✅ **Infrastructure SDK**: Complete with real zero-knowledge proof generation and verification
 - ✅ **Smart Contracts**: Deployed and verified on Avalanche Fuji testnet
-- ✅ **Frontend**: Complete React app with MetaMask integration and live demo
-- ✅ **Cross-Component Integration**: Full end-to-end integration working
+- ✅ **Demo Interface**: Complete React app with MetaMask integration and live demo
+- ✅ **Cross-Subnet Integration**: Full end-to-end cross-subnet verification working
 - ✅ **Testing**: Comprehensive test suite with real ZK proof validation
 - ✅ **Documentation**: Professional-grade developer guides and API reference
 - ✅ **Security**: Production-ready cryptography with security best practices
@@ -446,26 +446,34 @@ Our proprietary CPoE technology enables:
 - **Hardhat**: https://hardhat.org
 - **React**: https://reactjs.org
 
+<<<<<<< HEAD
 ## 📈 **Avalanche-Focused Roadmap**
+=======
+---
 
-### **Phase 1: Avalanche Foundation** ✅ **COMPLETE**
+**Built with ❤️ for the Avalanche ecosystem**
+
+## 📈 **Hackathon Roadmap & Infrastructure Vision**
+>>>>>>> 64cd580 (Complete rebranding from CrossLend Protocol to Vault SDK)
+
+### **Phase 1: Infrastructure Foundation** ✅ **COMPLETE**
 - ✅ **C-Chain Deployment**: Smart contracts live on Avalanche Fuji testnet
-- ✅ **AVAX Integration**: Native AVAX staking and collateral management
+- ✅ **AVAX Integration**: Native AVAX integration for cross-subnet operations
 - ✅ **Real ZK Proofs**: Production Groth16 implementation (15ms generation)
-- ✅ **Avalanche SDK**: Complete TypeScript SDK for Avalanche developers
-- ✅ **DApp Interface**: React frontend with MetaMask + Avalanche integration
+- ✅ **Vault SDK**: Complete TypeScript SDK for infrastructure developers
+- ✅ **Demo Interface**: React frontend with MetaMask + Avalanche integration
 
-### **Phase 2: Cross-Subnet Pioneer** ✅ **COMPLETE**
-- ✅ **Custom AVAX CPoE System**: World's first cross-subnet proof-of-existence implementation
+### **Phase 2: Cross-Subnet Infrastructure** ✅ **COMPLETE**
+- ✅ **Vault SDK System**: Infrastructure-level cross-subnet ZK verification
 - ✅ **Production ZK Circuits**: Real Groth16 zk-SNARKs with 15ms generation time
 - ✅ **Complete SDK Library**: TypeScript SDK with comprehensive documentation
-- ✅ **Developer Ecosystem**: Ready for integration by Avalanche developers
+- ✅ **Developer Ecosystem**: Ready for integration by Avalanche infrastructure developers
 
-### **Phase 3: Avalanche Ecosystem Leader** 📋 **PLANNED**
-- 📋 **Multi-Subnet Support**: Privacy across all major Avalanche subnets
-- 📋 **Developer Ecosystem**: Tools and SDKs for Avalanche subnet developers
-- 📋 **Enterprise Subnets**: Custom privacy solutions for Avalanche enterprises
-- 📋 **Avalanche Governance**: Community governance using AVAX token
+### **Phase 3: Avalanche Infrastructure Leader** 📋 **VISION**
+- 📋 **Multi-Subnet Infrastructure**: ZK verification across all Avalanche subnets
+- 📋 **Developer Ecosystem**: Infrastructure tools and SDKs for subnet developers
+- 📋 **Enterprise Infrastructure**: Custom ZK solutions for Avalanche enterprises
+- 📋 **Protocol Integration**: Core infrastructure for Avalanche ecosystem protocols
 
 ## 🔧 **Avalanche Development Setup**
 

@@ -1,4 +1,4 @@
-# 🔧 CrossLend SDK Troubleshooting Guide
+# 🔧 Vault SDK Troubleshooting Guide
 ## Quick Solutions for Common Issues
 
 ---

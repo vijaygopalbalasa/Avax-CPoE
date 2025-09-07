@@ -38,10 +38,10 @@ const SDKDocs: React.FC = () => {
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '30px' }}>
         <h1 style={{ color: '#2c3e50', fontSize: '2.5rem', marginBottom: '10px' }}>
-          🚀 CrossLend SDK Integration Guide
+          🚀 Vault SDK Integration Guide
         </h1>
         <p style={{ fontSize: '1.2rem', color: '#666', marginBottom: '20px' }}>
-          World's First Privacy-Preserving Cross-Subnet DeFi SDK
+          Infrastructure-Level Zero-Knowledge Verification SDK for Avalanche
         </p>
         <div style={{ 
           backgroundColor: '#e8f5e8', 
@@ -50,7 +50,7 @@ const SDKDocs: React.FC = () => {
           border: '2px solid #4CAF50'
         }}>
           <strong style={{ color: '#2e7d32' }}>
-            🔐 Real Zero-Knowledge Privacy • ⚡ 15ms Proof Generation • 🌐 Universal Avalanche Compatibility
+            🔐 Real Zero-Knowledge Infrastructure • ⚡ 15ms Proof Generation • 🌐 Cross-Subnet Verification
           </strong>
         </div>
       </div>
@@ -78,10 +78,10 @@ const SDKDocs: React.FC = () => {
       {activeTab === 'overview' && (
         <div>
           <div style={sectionStyle}>
-            <h2 style={{ color: '#2c3e50' }}>🔐 What is CrossLend SDK?</h2>
+            <h2 style={{ color: '#2c3e50' }}>🔐 What is Vault SDK?</h2>
             <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-              CrossLend SDK provides <strong>production-ready zero-knowledge proof generation</strong> and 
-              <strong> cross-subnet verification</strong> for any Avalanche application. This is <strong>real cryptography</strong> using 
+              Vault SDK provides <strong>infrastructure-level zero-knowledge verification</strong> and 
+              <strong> cross-subnet proof systems</strong> for Avalanche ecosystem development. This is <strong>real cryptography</strong> using 
               Groth16 zk-SNARKs with BN128 elliptic curves - not simulation!
             </p>
             
@@ -92,14 +92,14 @@ const SDKDocs: React.FC = () => {
                 <p>Real zero-knowledge proof generation with mathematical privacy guarantees.</p>
               </div>
               <div style={{ backgroundColor: 'white', padding: '15px', borderRadius: '8px', border: '1px solid #ddd' }}>
-                <h4 style={{ color: '#FF9800' }}>🏭 AvaxCPoE</h4>
-                <p>Cross-subnet proof of existence for transaction verification.</p>
+                <h4 style={{ color: '#FF9800' }}>🏭 VaultCPoE</h4>
+                <p>Cross-subnet verification infrastructure for Avalanche ecosystem.</p>
               </div>
             </div>
           </div>
 
           <div style={sectionStyle}>
-            <h2 style={{ color: '#2c3e50' }}>🌟 Why Choose CrossLend SDK?</h2>
+            <h2 style={{ color: '#2c3e50' }}>🌟 Why Choose Vault SDK?</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '15px', marginTop: '15px' }}>
               <div style={{ textAlign: 'center', padding: '15px' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '10px' }}>⚡</div>
@@ -108,13 +108,13 @@ const SDKDocs: React.FC = () => {
               </div>
               <div style={{ textAlign: 'center', padding: '15px' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '10px' }}>🔐</div>
-                <h4>Perfect Privacy</h4>
-                <p>Mathematical guarantees</p>
+                <h4>Infrastructure Level</h4>
+                <p>Core building blocks</p>
               </div>
               <div style={{ textAlign: 'center', padding: '15px' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '10px' }}>🌐</div>
                 <h4>Cross-Subnet</h4>
-                <p>Universal Avalanche compatibility</p>
+                <p>Avalanche ecosystem ready</p>
               </div>
             </div>
           </div>
@@ -128,18 +128,18 @@ const SDKDocs: React.FC = () => {
             
             <h3 style={{ color: '#4CAF50' }}>📦 Installation</h3>
             <pre style={codeBlockStyle}>
-{`npm install crosslend-sdk
+{`npm install @vault/sdk
 # or
-yarn add crosslend-sdk`}
+yarn add @vault/sdk`}
             </pre>
 
             <h3 style={{ color: '#4CAF50' }}>💻 Basic Usage</h3>
             <pre style={codeBlockStyle}>
-{`import { ProductionZKProofGenerator } from 'crosslend-sdk';
+{`import { ProductionZKProofGenerator } from '@vault/sdk';
 
 const zkGenerator = new ProductionZKProofGenerator();
 
-// Generate proof that user has >= minAmount without revealing exact amount
+// Generate ZK proof for cross-subnet verification without revealing exact amount
 const proof = await zkGenerator.generateProductionProof(
     // Private inputs (hidden from everyone)
     {

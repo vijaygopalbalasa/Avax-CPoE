@@ -1,7 +1,7 @@
 {
-  "name": "@crosslend/avax-cpoe-sdk",
+  "name": "@vault/sdk",
   "version": "1.0.0",
-  "description": "Cross-Domain Proof-of-Event Library for Avalanche - HACKATHON EDITION",
+  "description": "Infrastructure-level Zero-Knowledge Verification SDK for Avalanche Multi-Subnet Architecture - HACKATHON EDITION",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -11,9 +11,10 @@
   },
   "keywords": [
     "avalanche",
-    "cross-chain",
-    "proof",
-    "defi",
+    "cross-subnet",
+    "zk-proofs",
+    "infrastructure",
+    "sdk",
     "hackathon"
   ],
   "dependencies": {

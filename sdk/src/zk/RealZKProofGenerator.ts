@@ -470,7 +470,7 @@ component main = StakeProof();
      */
     getCircuitInfo() {
         return {
-            name: 'Real AVAX-CPoE Privacy Circuit',
+            name: 'Vault SDK ZK Verification Circuit',
             type: 'Groth16 zk-SNARK',
             curve: 'BN128',
             constraints: '~1.5M constraints',

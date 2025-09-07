@@ -1,7 +1,7 @@
-# 🛠️ CrossLend SDK Developer Guide
-## Complete Privacy Infrastructure for Avalanche Applications
+# 🛠️ Vault SDK Developer Guide
+## Infrastructure-Level ZK Verification for Avalanche Ecosystem
 
-**Transform any Avalanche application into a privacy-preserving powerhouse with production-grade zero-knowledge proofs and cross-subnet communication.**
+**Build robust Avalanche applications with infrastructure-level zero-knowledge verification and cross-subnet proof systems.**
 
 ---
 
@@ -9,18 +9,18 @@
 
 ### **Installation**
 ```bash
-npm install @crosslend/avax-cpoe-sdk
+npm install @vault/sdk
 # or
-yarn add @crosslend/avax-cpoe-sdk
+yarn add @vault/sdk
 ```
 
-### **30-Second Privacy Integration**
+### **30-Second ZK Integration**
 ```typescript
-import { ProductionZKProofGenerator, AvaxCPoE } from '@crosslend/avax-cpoe-sdk';
+import { ProductionZKProofGenerator, VaultCPoE } from '@vault/sdk';
 
 // 1. Initialize the SDK
 const zkGenerator = new ProductionZKProofGenerator();
-const avaxCPoE = new AvaxCPoE('https://api.avax-test.network/ext/bc/C/rpc');
+const vaultCPoE = new VaultCPoE('https://api.avax-test.network/ext/bc/C/rpc');
 
 // 2. Generate privacy proof (15ms)
 const proof = await zkGenerator.generateProductionProof({

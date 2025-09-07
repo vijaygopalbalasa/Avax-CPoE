@@ -1,11 +1,11 @@
-# 🔒 CrossLend SDK Security Guide
-## Production-Grade Security for Privacy-Preserving Applications
+# 🔒 Vault SDK Security Guide
+## Production-Grade Security for Infrastructure-Level ZK Verification
 
 ---
 
 ## 🛡️ **Security Overview**
 
-The CrossLend SDK implements **mathematical privacy guarantees** through production-grade zero-knowledge cryptography. This guide covers security best practices for developers building privacy-preserving applications.
+The Vault SDK implements **mathematical verification guarantees** through production-grade zero-knowledge cryptography. This guide covers security best practices for developers building infrastructure-level ZK verification systems.
 
 ---
 

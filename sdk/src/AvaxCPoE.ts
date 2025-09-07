@@ -13,13 +13,13 @@ export class AvaxCPoE {
 
     /**
      * Generate cryptographic proof for a transaction event
-     * This is the CORE INNOVATION of AVAX-CPoE!
+     * This is the CORE INNOVATION of Vault SDK!
      */
     async generateProof(
         transactionHash: string,
         options: ProofGenerationOptions = {}
     ): Promise<Proof> {
-        console.log('🏭 AVAX-CPoE: Generating proof for transaction:', transactionHash);
+        console.log('🏭 Vault SDK: Generating proof for transaction:', transactionHash);
 
         try {
             // Step 1: Get transaction receipt from blockchain
@@ -93,7 +93,7 @@ export class AvaxCPoE {
      * This runs the complete verification algorithm!
      */
     async verifyProof(proof: Proof): Promise<VerificationResult> {
-        console.log(' AVAX-CPoE: Verifying proof for event:', proof.eventId);
+        console.log(' Vault SDK: Verifying proof for event:', proof.eventId);
 
         const result: VerificationResult = {
             isValid: false,
@@ -212,7 +212,7 @@ export class AvaxCPoE {
      */
     getProofSummary(proof: Proof): string {
         return `
-🔗 AVAX-CPoE Proof Summary
+🔗 Vault SDK Proof Summary
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📋 Event ID: ${proof.eventId}
 🏔️ Source: ${proof.sourceSubnet}

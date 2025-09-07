@@ -2,12 +2,12 @@
 pragma solidity ^0.8.19;
 
 /**
- * @title CrossLend Protocol
- * @dev Real cross-subnet lending using AVAX-CPoE proof verification
- * @notice This contract demonstrates cross-subnet asset utilization
+ * @title Vault SDK Protocol
+ * @dev Infrastructure-level cross-subnet ZK verification using Vault SDK
+ * @notice This contract demonstrates cross-subnet ZK proof verification infrastructure
  */
-contract CrossLendProtocol {
-    // Events for our AVAX-CPoE proof generation
+contract VaultSDKProtocol {
+    // Events for our Vault SDK proof generation
     event StakeEvent(
         address indexed user,
         uint256 amount,
@@ -85,7 +85,7 @@ contract CrossLendProtocol {
             block.number
         ));
         
-        // Emit event that our AVAX-CPoE SDK will use to generate proofs
+        // Emit event that our Vault SDK will use to generate proofs
         emit StakeEvent(
             msg.sender,
             msg.value,
@@ -96,11 +96,11 @@ contract CrossLendProtocol {
     }
     
     /**
-     * @dev Borrow USDC using cross-subnet proof
-     * @param proofHash Hash of the AVAX-CPoE proof
+     * @dev Borrow USDC using cross-subnet ZK proof
+     * @param proofHash Hash of the Vault SDK ZK proof
      * @param stakeAmount Amount of AVAX staked (from proof)
      * @param user User address (from proof)
-     * @notice This simulates cross-subnet borrowing with proof verification
+     * @notice This demonstrates cross-subnet ZK proof verification infrastructure
      */
     function borrowWithProof(
         bytes32 proofHash,
@@ -112,7 +112,7 @@ contract CrossLendProtocol {
         require(user != address(0), "Invalid user address");
         require(!usedProofs[proofHash], "Proof already used");
         
-        // In real implementation, this would verify the actual AVAX-CPoE proof
+        // In real implementation, this would verify the actual Vault SDK ZK proof
         // For demo, we simulate verification with basic checks
         bool proofValid = simulateProofVerification(proofHash, stakeAmount, user);
         require(proofValid, "Proof verification failed");
@@ -152,7 +152,7 @@ contract CrossLendProtocol {
      * @param stakeAmount Amount claimed to be staked
      * @param user User address
      * @return bool Whether proof is valid
-     * @notice In production, this would call actual AVAX-CPoE verification
+     * @notice In production, this would call actual Vault SDK ZK verification
      */
     function simulateProofVerification(
         bytes32 proofHash,
@@ -165,12 +165,12 @@ contract CrossLendProtocol {
         if (user == address(0)) return false;
         
         // Simulate cryptographic verification
-        // In real implementation: return AvaxCPoEVerifier.verifyProof(proof);
+        // In real implementation: return VaultSDKVerifier.verifyProof(proof);
         bytes32 computedHash = keccak256(abi.encodePacked(
             proofHash,
             stakeAmount,
             user,
-            "AVAX_CPOE_VERIFICATION"
+            "VAULT_SDK_ZK_VERIFICATION"
         ));
         
         // Simple validation: hash should not be zero

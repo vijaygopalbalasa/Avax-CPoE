@@ -23,8 +23,8 @@ const CONTRACT_ABI = [
   "event ProofVerified(bytes32 indexed proofHash, address indexed user, bool isValid, uint256 timestamp)"
 ];
 
-// Mock AVAX-CPoE SDK for demo (simplified version)
-class AvaxCPoE {
+// Mock Vault SDK for demo (simplified version)
+class VaultSDK {
   private provider: any;
   
   constructor(rpcUrl: string) {
@@ -32,7 +32,7 @@ class AvaxCPoE {
   }
 
   async generateProof(txHash: string): Promise<any> {
-    console.log('🏭 Generating AVAX-CPoE proof for transaction:', txHash);
+    console.log('🏭 Generating Vault SDK proof for transaction:', txHash);
 
     try {
       // Get real transaction receipt
@@ -50,7 +50,7 @@ class AvaxCPoE {
       const proofHash = ethers.utils.keccak256(
         ethers.utils.defaultAbiCoder.encode(
           ['bytes32', 'address', 'uint256', 'string'],
-          [receipt.blockHash, receipt.from, receipt.blockNumber, 'AVAX_CPOE_PROOF']
+          [receipt.blockHash, receipt.from, receipt.blockNumber, 'VAULT_SDK_PROOF']
         )
       );
 
@@ -115,7 +115,7 @@ function App() {
   const [provider, setProvider] = useState<any>(null);
   const [signer, setSigner] = useState<any>(null);
   const [contract, setContract] = useState<any>(null);
-  const [cpoe, setCpoe] = useState<AvaxCPoE | null>(null);
+  const [cpoe, setCpoe] = useState<VaultSDK | null>(null);
   const [account, setAccount] = useState('');
   const [isConnected, setIsConnected] = useState(false);
 
@@ -142,9 +142,9 @@ function App() {
   // Navigation state
   const [activeView, setActiveView] = useState('protocol');
 
-  // Initialize AVAX-CPoE SDK
+  // Initialize Vault SDK
   useEffect(() => {
-    const sdk = new AvaxCPoE(FUJI_RPC);
+    const sdk = new VaultSDK(FUJI_RPC);
     setCpoe(sdk);
   }, []);
 
@@ -273,13 +273,13 @@ function App() {
     setIsStaking(false);
   };
 
-  // Generate proof using AVAX-CPoE SDK (Legacy)
+  // Generate proof using Vault SDK (Legacy)
   const generateProof = async () => {
     if (!cpoe || !stakeTxHash) return;
 
     setIsGeneratingProof(true);
     try {
-      console.log('🏭 Generating AVAX-CPoE proof...');
+      console.log('🏭 Generating Vault SDK proof...');
 
       const proof = await cpoe.generateProof(stakeTxHash);
       setGeneratedProof(proof);
@@ -419,7 +419,7 @@ function App() {
         
         // Verify legacy proof
         if (!cpoe) {
-          throw new Error('AVAX-CPoE SDK not initialized');
+          throw new Error('Vault SDK not initialized');
         }
         
         const verification = await cpoe.verifyProof(generatedProof);
@@ -478,10 +478,10 @@ function App() {
           }}>
             <div>
               <h1 style={{ margin: 0, fontSize: '2.5rem', color: '#333' }}>
-                🚀 CrossLend Protocol
+                🚀 Vault SDK
               </h1>
               <p style={{ margin: '10px 0 0 0', color: '#666', fontSize: '1.1rem' }}>
-                Privacy-Preserving Cross-Subnet DeFi on Avalanche
+                Infrastructure-Level ZK Verification for Avalanche Subnets
               </p>
             </div>
 

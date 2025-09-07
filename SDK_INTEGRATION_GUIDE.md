@@ -1,17 +1,17 @@
-# 🚀 CrossLend SDK - Complete Integration Guide
+# 🚀 Vault SDK - Complete Integration Guide
 
-## 🔐 Real Zero-Knowledge Privacy for Avalanche Applications
+## 🔐 Infrastructure-Level ZK Verification for Avalanche Ecosystem
 
-**CrossLend SDK** provides production-ready **zero-knowledge proof generation** and **cross-subnet verification** for any Avalanche application. This is **real cryptography** using Groth16 zk-SNARKs with BN128 elliptic curves - not simulation!
+**Vault SDK** provides production-ready **zero-knowledge verification infrastructure** and **cross-subnet proof systems** for Avalanche ecosystem development. This is **real cryptography** using Groth16 zk-SNARKs with BN128 elliptic curves - not simulation!
 
 ---
 
 ## 📦 Installation
 
 ```bash
-npm install crosslend-sdk
+npm install @vault/sdk
 # or
-yarn add crosslend-sdk
+yarn add @vault/sdk
 ```
 
 ---
@@ -21,8 +21,8 @@ yarn add crosslend-sdk
 ### **🔐 ProductionZKProofGenerator**
 Real zero-knowledge proof generation with mathematical privacy guarantees.
 
-### **🏭 AvaxCPoE** 
-Cross-subnet proof of existence for transaction verification.
+### **🏭 VaultCPoE** 
+Cross-subnet verification infrastructure for Avalanche ecosystem.
 
 ### **🌉 RealZKVerifier**
 Smart contract integration for on-chain ZK proof verification.

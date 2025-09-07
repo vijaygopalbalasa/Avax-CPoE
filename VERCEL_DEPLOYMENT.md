@@ -1,10 +1,10 @@
-# 🚀 CrossLend Protocol - Vercel Deployment Guide
+# 🚀 Vault SDK - Vercel Deployment Guide
 
 ## Quick Deploy to Vercel
 
 ### **Option 1: One-Click Deploy (Recommended)**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vijaygopalbalasa/Avax-CPoE&project-name=crosslend-protocol&repository-name=crosslend-protocol&root-directory=frontend)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vijaygopalbalasa/Avax-CPoE&project-name=vault-sdk&repository-name=vault-sdk&root-directory=frontend)
 
 ### **Option 2: Manual Deployment**
 
@@ -27,7 +27,7 @@
    - Set up and deploy? **Y**
    - Which scope? **Your Vercel account**
    - Link to existing project? **N**
-   - Project name: **crosslend-protocol**
+   - Project name: **vault-sdk**
    - Directory: **./frontend** (or just press Enter)
 
 ## 🔧 Configuration
