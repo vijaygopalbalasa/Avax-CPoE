@@ -103,9 +103,7 @@ function App() {
     generateRealZKProof,
     verifyRealZKProof,
     formatProofForContract,
-    getCircuitInfo,
     isGeneratingProof: isGeneratingZKProof,
-    lastProof: lastZKProof,
     proofStats: zkProofStats,
     isReady: zkReady,
     version: zkVersion
@@ -375,7 +373,7 @@ function App() {
           );
 
           console.log('📤 REAL ZK borrow transaction sent:', tx.hash);
-          const receipt = await tx.wait();
+          await tx.wait();
           console.log('✅ REAL ZK borrow successful!');
 
           alert('🎉 SUCCESS! You borrowed USDC using REAL ZK proof with perfect privacy!');
@@ -408,7 +406,7 @@ function App() {
           );
 
           console.log('📤 Legacy borrow with ZK proof sent:', tx.hash);
-          const receipt = await tx.wait();
+          await tx.wait();
           console.log('✅ Legacy borrow with ZK proof successful!');
 
           alert('🎉 SUCCESS! You borrowed USDC using ZK proof (legacy mode)!');
@@ -438,7 +436,7 @@ function App() {
         );
 
         console.log('📤 Legacy borrow transaction sent:', tx.hash);
-        const receipt = await tx.wait();
+        await tx.wait();
         console.log('✅ Legacy borrow successful!');
 
         alert('🎉 SUCCESS! You borrowed USDC using cross-subnet proof!');

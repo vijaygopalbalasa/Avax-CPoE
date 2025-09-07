@@ -1,6 +1,4 @@
 // frontend/src/zk/ProductionZKProofGenerator.ts
-// @ts-ignore - snarkjs types not available
-import * as snarkjs from 'snarkjs';
 import { ethers } from 'ethers';
 
 /**
@@ -406,7 +404,7 @@ export class ProductionZKProofGenerator {
             console.log('✅ Elliptic curve points validation passed');
 
             // Step 4: Verify public inputs are reasonable
-            const [minAmount, merkleRoot, nullifierHash] = publicSignals;
+            const [minAmount, merkleRoot] = publicSignals;
 
             if (BigInt(minAmount) <= 0) {
                 throw new Error('Invalid minimum amount');
