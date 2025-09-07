@@ -9,8 +9,8 @@ import { ethers } from 'ethers';
  * Uses actual Circom circuits and snarkjs for proof generation
  */
 export class RealZKProofGenerator {
-    private circuitWasm: ArrayBuffer;
-    private circuitZkey: ArrayBuffer;
+    private circuitWasm!: ArrayBuffer;
+    private circuitZkey!: ArrayBuffer;
     private verificationKey: any;
 
     constructor() {
@@ -181,6 +181,7 @@ component main = StakeProof();
         console.log('⚙️ Using actual cryptographic constraints');
 
         try {
+
             // Step 1: Generate nullifier hash using real Poseidon hash
             const nullifierHash = await this.poseidonHash([
                 BigInt(privateInputs.userSecret),
@@ -245,14 +246,14 @@ component main = StakeProof();
 
         } catch (error) {
             console.error('❌ Real ZK proof generation failed:', error);
-            throw new Error(`ZK proof generation failed: ${error.message}`);
+            throw new Error(`ZK proof generation failed: ${(error as Error).message}`);
         }
     }
 
     /**
      * Real Poseidon hash implementation
      */
-    private async poseidonHash(inputs: BigInt[]): Promise<BigInt> {
+        private async poseidonHash(inputs: bigint[]): Promise<bigint> {
         // For hackathon demo, we'll use a simplified but real hash
         // In production, use circomlib's Poseidon
 
@@ -357,9 +358,9 @@ component main = StakeProof();
     /**
      * Verify Merkle constraint (real implementation)
      */
-    private verifyMerkleConstraint(
+        private verifyMerkleConstraint(
         leaf: string,
-        pathElements: BigInt[],
+        pathElements: bigint[],
         pathIndices: number[],
         root: string
     ): boolean {
@@ -387,7 +388,7 @@ component main = StakeProof();
     /**
      * Hash pair for Merkle tree (real implementation)
      */
-    private hashPair(left: BigInt, right: BigInt): BigInt {
+        private hashPair(left: bigint, right: bigint): bigint {
         // Use real Poseidon hash for ZK-friendly computation
         const combined = left < right ? [left, right] : [right, left];
         return BigInt(ethers.utils.keccak256(
@@ -440,7 +441,7 @@ component main = StakeProof();
             return true;
 
         } catch (error) {
-            console.error('❌ ZK proof verification failed:', error);
+            console.error('❌ ZK proof verification failed:', (error as Error).message);
             return false;
         }
     }

@@ -5,7 +5,7 @@ export declare class AvaxCPoE {
     constructor(rpcUrl: string, sourceSubnet?: string);
     /**
      * Generate cryptographic proof for a transaction event
-     * This is the CORE INNOVATION of AVAX-CPoE!
+     * This is the CORE INNOVATION of Vault SDK!
      */
     generateProof(transactionHash: string, options?: ProofGenerationOptions): Promise<Proof>;
     /**

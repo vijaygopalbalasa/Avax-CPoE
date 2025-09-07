@@ -110,7 +110,7 @@ function App() {
   } = useProductionZK();
 
   // State management
-  const [provider, setProvider] = useState<any>(null);
+  const [, setProvider] = useState<any>(null);
   const [signer, setSigner] = useState<any>(null);
   const [contract, setContract] = useState<any>(null);
   const [cpoe, setCpoe] = useState<VaultSDK | null>(null);
